@@ -1,0 +1,4 @@
+name: ToolAPI
+main: com.toolapi.ToolAPI
+version: 1.0
+softdepend: [ProtocolLib,Vault]
