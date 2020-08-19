@@ -2,9 +2,11 @@ package com.toolapi.utils;
 
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -79,5 +81,20 @@ public class WorldUtil {
 		for(Entity entity:allEntity) {
 			entity.remove();
 		}
+	}
+	
+	/**
+	 * 坐标指定范围内是否有指定玩家
+	 * @param loc 坐标
+	 * @param dis 范围
+	 * @param playerName 玩家名
+	 * @return
+	 */
+	public static boolean hasPlayerInDistance(Location loc,double dis,String playerName) {
+		playerName=playerName.toLowerCase();
+		Player player=Bukkit.getPlayer(playerName);
+		if(!Bukkit.getOnlinePlayers().contains(player))return false;
+		if(player.getLocation().distance(loc)<=dis)return true;
+		return false;
 	}
 }
