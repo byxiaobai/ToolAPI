@@ -1,4 +1,4 @@
-package com.algorithm;
 /**
-* 算法
+* 算法API
 */
+package com.algorithm;
