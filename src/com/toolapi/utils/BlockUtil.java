@@ -1,5 +1,6 @@
 package com.toolapi.utils;
 
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 
@@ -19,5 +20,12 @@ public class BlockUtil {
 			return true;
 		}
 		return false;
+	}
+	
+	public static Block getBlockByLocationWithDeltaY(Location loc,int deltaY) {
+		if(loc==null)return null;
+		Location tmp=loc.clone();
+		tmp.setY(tmp.getY()+deltaY);
+		return tmp.getBlock();
 	}
 }
